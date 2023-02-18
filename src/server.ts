@@ -16,5 +16,5 @@ router.get('/', (ctx) => {
 
 app.use(router.routes());
 app.use(nodeResolve());
-app.use(staticFiles('.'));
+app.use(staticFiles('./app/public'));
 app.listen(3000);
