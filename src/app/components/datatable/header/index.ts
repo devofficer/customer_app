@@ -19,7 +19,6 @@ export class Template extends LitElement {
   headers: TableHeaderProps[] = []
   
   render() {
-    console.log(this.headers);
     return template(this.headers);
   }
 }

@@ -6,7 +6,7 @@
 */
 
 import { html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 import './layouts/navbar/index.js';
 import './layouts/customer-form/index.js';
 import "./layouts/customer-layout/customer-create/index.js";
@@ -15,6 +15,9 @@ import "./components/datatable/index.js";
 
 @customElement('defie-app')
 export class App extends LitElement {
+  @property()
+  route: string = 'list';
+  
   // private _router = new Router(this, [
   //   {
   //     path: '/', 

@@ -1,7 +1,6 @@
 import { html } from "lit";
 
 export const template = () => {
-  console.log("defie-datatable-filter");
   return html`
     <div class="filter-wrapper">
       <div class="filter-searchbar">

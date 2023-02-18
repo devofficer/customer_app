@@ -18,9 +18,6 @@ export const template = ({ headers, items, renderers }: TableBodyProps) => {
           const dataIndex = header.dataIndex;
           const cellValue = item[dataIndex as keyof TableItemProps];
           const renderer = renderers[dataIndex as keyof TableItemRenderer];
-
-
-
           if(header.width)
             return html`<span class="body-item" style="width: ${header.width}px">
               ${renderer ? renderer(cellValue) : cellValue}
