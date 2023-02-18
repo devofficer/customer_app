@@ -1,7 +1,7 @@
 import { LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { styles } from "../form-elements-css";
-import { template } from "./form-textfiled-template";
+import { styles } from "../form-elements-css.js";
+import { template } from "./form-textfiled-template.js";
 
 @customElement('defie-form-textfield')
 export class CheckBox extends LitElement {

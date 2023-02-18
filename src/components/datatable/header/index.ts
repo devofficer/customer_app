@@ -1,7 +1,7 @@
 import { LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { styles } from "./header-css";
-import { template } from "./header-template";
+import { styles } from "./header-css.js";
+import { template } from "./header-template.js";
 
 export interface TableHeaderProps {
   title: string

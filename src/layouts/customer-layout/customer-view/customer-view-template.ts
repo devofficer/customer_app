@@ -1,7 +1,7 @@
 import { html } from "lit";
-import "../../customer-form-container/customer-form-header";
-import "../../customer-form-container/customer-form-footer";
-import "../../../components/image-button";
+import "../../customer-form-container/customer-form-header/index.js";
+import "../../customer-form-container/customer-form-footer/index.js";
+import "../../../components/image-button/index.js";
 
 export const template = () => {
   const handleClick = () => {

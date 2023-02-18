@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { template } from "./navbar-template";
-import { styles } from "./navbar-styles";
+import { template } from "./navbar-template.js";
+import { styles } from "./navbar-styles.js";
 
 @customElement("defie-navbar")
 export class Navbar extends LitElement {

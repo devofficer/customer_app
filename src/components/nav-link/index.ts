@@ -1,7 +1,7 @@
 import { LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { styles } from "./nav-link-css";
-import { template } from "./nav-link-template";
+import { styles } from "./nav-link-css.js";
+import { template } from "./nav-link-template.js";
 
 @customElement('defie-nav-link')
 export class Template extends LitElement {

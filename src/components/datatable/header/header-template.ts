@@ -1,5 +1,5 @@
 import { html } from "lit";
-import { TableHeaderProps } from ".";
+import { TableHeaderProps } from "./index.js";
 
 export const template = (headers: TableHeaderProps[]) => {
   return html`

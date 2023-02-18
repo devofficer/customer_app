@@ -1,7 +1,7 @@
 import { LitElement } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import { styles } from "./customer-form-css";
-import { template } from "./customer-form-template";
+import { styles } from "./customer-form-css.js";
+import { template } from "./customer-form-template.js";
 
 @customElement('defie-customer-form')
 export class CustomerForm extends LitElement {

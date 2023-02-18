@@ -1,10 +1,10 @@
 import { html } from "lit";
-import { TableHeaderProps } from "./header";
-import { TableItemProps, TableItemRenderer } from "./body";
-import "./filters";
-import "./pagination";
-import "./header";
-import "./body";
+import { TableHeaderProps } from "./header/index.js";
+import { TableItemProps, TableItemRenderer } from "./body/index.js";
+import "./filters/index.js";
+import "./pagination/index.js";
+import "./header/index.js";
+import "./body/index.js";
 
 const headers: TableHeaderProps[] = [
   { title: 'Edit', dataIndex: 'edit', flex: 1 },

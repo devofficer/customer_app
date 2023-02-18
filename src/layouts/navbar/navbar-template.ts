@@ -1,8 +1,8 @@
 import { html } from 'lit';
-import "../../components/nav-link";
-import "../../components/profile";
-import "../../components/logout";
-import "../../components/logo";
+import "../../components/nav-link/index.js";
+import "../../components/profile/index.js";
+import "../../components/logout/index.js";
+import "../../components/logo/index.js";
 
 interface NavbarProps {
   id: string

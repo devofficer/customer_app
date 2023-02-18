@@ -1,7 +1,7 @@
 import { LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
-import { styles } from "../customer-layout-css";
-import { template } from "./customer-create-template";
+import { styles } from "../customer-layout-css.js";
+import { template } from "./customer-create-template.js";
 
 @customElement('defie-customer-create')
 export class CustomerCreate extends LitElement {

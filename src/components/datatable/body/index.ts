@@ -1,8 +1,8 @@
 import { LitElement, TemplateResult } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { styles } from "./body-css";
-import { template } from "./body-template";
-import { TableHeaderProps } from "../header";
+import { styles } from "./body-css.js";
+import { template } from "./body-template.js";
+import { TableHeaderProps } from "../header/index.js";
 
 export interface TableItemProps {
   [key: string]: string

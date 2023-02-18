@@ -6,11 +6,11 @@
 */
 
 import { customElement, html, LitElement } from 'lit-element';
-import './layouts/navbar';
-import './layouts/customer-form';
-import "./layouts/customer-layout/customer-create";
-import "./layouts/customer-layout/customer-view";
-import "./components/datatable";
+import './layouts/navbar/index.js';
+import './layouts/customer-form/index.js';
+import "./layouts/customer-layout/customer-create/index.js";
+import "./layouts/customer-layout/customer-view/index.js";
+import "./components/datatable/index.js";
 import { Router } from '@lit-labs/router';
 
 @customElement('defie-app')

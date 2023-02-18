@@ -1,7 +1,7 @@
 import { LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { styles } from "./form-button-css";
-import { template } from "./form-button-template";
+import { styles } from "./form-button-css.js";
+import { template } from "./form-button-template.js";
 
 @customElement('defie-form-button')
 export class Template extends LitElement {

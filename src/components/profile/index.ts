@@ -1,7 +1,7 @@
 import { LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { template } from "./profile-template";
-import { styles } from './profile-css';
+import { template } from "./profile-template.js";
+import { styles } from './profile-css.js';
 
 @customElement('defie-profile')
 export class Profile extends LitElement {

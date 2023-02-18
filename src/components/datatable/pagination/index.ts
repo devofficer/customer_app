@@ -1,7 +1,7 @@
 import { LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { styles } from "./pagination-css";
-import { template } from "./pagination-template";
+import { styles } from "./pagination-css.js";
+import { template } from "./pagination-template.js";
 
 @customElement('defie-datatable-pagination')
 export class Template extends LitElement {

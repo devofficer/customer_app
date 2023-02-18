@@ -1,7 +1,7 @@
 import { LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
-import { styles } from "./datatable-css";
-import { template } from "./datatable-template";
+import { styles } from "./datatable-css.js";
+import { template } from "./datatable-template.js";
 
 @customElement('defie-datatable')
 export class Template extends LitElement {

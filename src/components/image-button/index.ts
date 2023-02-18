@@ -1,7 +1,7 @@
 import { LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { styles } from "./image-button-css";
-import { template } from "./image-button-template";
+import { styles } from "./image-button-css.js";
+import { template } from "./image-button-template.js";
 
 @customElement('defie-image-button')
 export class Template extends LitElement {

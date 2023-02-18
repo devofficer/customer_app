@@ -1,6 +1,6 @@
 import { html } from "lit";
-import { TableItemProps, TableItemRenderer } from ".";
-import { TableHeaderProps } from "../header";
+import { TableItemProps, TableItemRenderer } from "./index.js";
+import { TableHeaderProps } from "../header/index.js";
 
 interface TableBodyProps {
   headers: TableHeaderProps[],

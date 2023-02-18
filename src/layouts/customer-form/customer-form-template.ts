@@ -1,11 +1,9 @@
 import { html } from "lit";
-import '@material/web/button/filled-button';
-import '@material/web/textfield/filled-text-field';
-import '../../components/form-elements/form-textfield';
-import '../../components/form-elements/form-checkbox';
-import '../../components/form-elements/form-button';
-import '../../components/form-elements/form-select';
-import '../../components/form-elements/form-label';
+import '../../components/form-elements/form-textfield/index.js';
+import '../../components/form-elements/form-checkbox/index.js';
+import '../../components/form-elements/form-button/index.js';
+import '../../components/form-elements/form-select/index.js';
+import '../../components/form-elements/form-label/index.js';
 
 export const template = () => {
 

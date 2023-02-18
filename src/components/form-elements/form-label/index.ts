@@ -1,7 +1,7 @@
 import { LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { styles } from "./form-label-css";
-import { template } from "./form-label-template";
+import { styles } from "./form-label-css.js";
+import { template } from "./form-label-template.js";
 
 @customElement('defie-form-label')
 export class FormLabel extends LitElement {
