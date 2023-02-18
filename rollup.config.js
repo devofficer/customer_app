@@ -3,9 +3,9 @@ import resolve from '@rollup/plugin-node-resolve';
 import { copy } from '@web/rollup-plugin-copy';
 
 export default {
-    input: './dist/main.js',
+    input: './dist/app/main.js',
     output: {
-        file: './dist/main.bundle.js',
+        file: './dist/app/main.bundle.js',
         format: 'iife',
         sourcemap: true,
     },

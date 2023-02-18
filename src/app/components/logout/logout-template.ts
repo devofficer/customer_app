@@ -1,5 +1,4 @@
 import { html } from 'lit';
-import '@material/web/button/filled-button';
 
 export const template = () => {
   return html`

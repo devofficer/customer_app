@@ -1,5 +1,5 @@
 export default {
-    rootDir: './dist',
-    appIndex: './dist/index.html',
+    rootDir: './dist/app',
+    appIndex: './dist/app/index.html',
     nodeResolve: true,
 };
