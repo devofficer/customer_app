@@ -1,19 +1,25 @@
-import Router from '@koa/router';
-import { render } from '@lit-labs/ssr';
 import Koa from 'koa';
-import { nodeResolve } from 'koa-node-resolve';
+import Router from '@koa/router';
 import staticFiles from 'koa-static';
-
-
 import { Readable } from 'stream';
+import { render } from '@lit-labs/ssr';
+import { nodeResolve } from 'koa-node-resolve';
 import { renderCreatePage, renderViewPage } from './app/render.js';
+import { generateMock, getCustomers } from './mock/api.js';
 
 const app = new Koa();
 const router = new Router();
 
-router.get('/', (ctx) => {
-  ctx.type = 'text/html';
-  ctx.body = Readable.from(render(renderViewPage()));
+// generating mock customer information for testing
+generateMock(200);
+
+// registering routes
+router.get('/', (req) => {
+  const page = req.request.query.page ? parseInt(req.request.query.page as string) : 1;
+  const customers = getCustomers(page);
+
+  req.type = 'text/html';
+  req.body = Readable.from(render(renderViewPage(customers)));
 });
 
 router.get('/create', (ctx) => {

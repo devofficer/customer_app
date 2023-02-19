@@ -8,13 +8,13 @@ export class Template extends LitElement {
   static styles = styles;
 
   @property()
-  totalItems: number = 1500;
+  totalItems: number = 0;
 
   @property()
-  itemsPerPage: number = 10;
+  itemsPerPage: number = 25;
 
   @property()
-  currentPage: number = 6;
+  currentPage: number = 1;
   
   render() {
     return template({

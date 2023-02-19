@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "npm-run-all clean build --parallel \"build:watch -- --preserveWatchOutput\" bundle:watch css:watch",
+    "dev": "npm-run-all clean build --parallel \"build:watch -- --preserveWatchOutput\" bundle:watch css:watch",
     "clean": "rimraf ./dist",
     "clean:prod": "rimraf \"./dist/!(index|main.bundle)*\"",
     "build": "tsc",
