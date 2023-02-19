@@ -1,11 +1,18 @@
 import { html } from "lit";
+import { generateQueryUrl } from "../../../utils/index.js";
 
 export const template = () => {
+  const handleChangeKeyword = (event: Event) => {
+    const element = event.target as HTMLInputElement;
+    const keyword = element.value;
+    generateQueryUrl({customer_id: keyword});
+  }
+
   return html`
     <div class="filter-wrapper">
       <div class="filter-searchbar">
         <div class="filter-input-wrapper">
-          <input class="filter-input" type="search" />
+          <input class="filter-input" type="search" @change=${handleChangeKeyword}/>
           <img src="./assets/buttons/search.png" alt="search" />
         </div>
         <div class="filter-radio-wrapper">
