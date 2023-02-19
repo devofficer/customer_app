@@ -13,8 +13,23 @@ export const styles = css`
   }
 
   .pagination-item.selected {
-    color: blue;
     font-weight: bold;
+  }
+
+  .pagination-item a {
+    text-decoration: none;
+  }
+
+  .pagination-item a {
+    color: black;
+  }
+
+  .pagination-item a:hover {
+    color: gray;
+  }
+
+  .pagination-item.selected a {
+    color: blue;
   }
 
   .tool-btn {

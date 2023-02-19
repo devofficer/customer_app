@@ -23,7 +23,7 @@ export const template = (customers: any) => {
       return html`<img class="icon-button" src="./assets/buttons/edit.png" alt="${cellValue}"/>`
     },
     customer_id: (cellValue: string) => {
-      return html`<a class="link-button">${cellValue}</a>`
+      return html`<a class="link-button">${cellValue.substring(0, 16)}...</a>`
     }
   }
 
@@ -44,6 +44,11 @@ export const template = (customers: any) => {
         .items=${customers.data} 
         .renderers=${renderers}>
       </defie-datatable-body>
+      <defie-datatable-pagination 
+        .totalItems=${customers.totalItems} 
+        .currentPage=${customers.currentPage} 
+        .itemsPerPage=${customers.itemsPerPage}>
+      </defie-datatable-pagination>
     </div>
   `;
 }
