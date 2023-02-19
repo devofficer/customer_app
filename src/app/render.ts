@@ -65,12 +65,18 @@ const render = (pageContent: TemplateResult, lazyImport: TemplateResult) => {
 
 // we need to define the interface for customers
 export const renderViewPage = (customers: any) => {
-  const pageContent = html`<defie-page-customer-view .customers=${customers}></defie-page-customer-view>`;
+  const pageContent = html`<defie-page-customer-view active="view" .customers=${customers}></defie-page-customer-view>`;
   const lazyImport = html`<script type="module">import('./dist/app/pages/view.js')</script>`;
   return render(pageContent, lazyImport);
 }
 
 export const renderCreatePage = () => {
+  const pageContent = html`<defie-page-customer-create></defie-page-customer-create>`;
+  const lazyImport = html`<script type="module">import('./dist/app/pages/create.js')</script>`;
+  return render(pageContent, lazyImport);
+}
+
+export const renderUpdatePage = () => {
   const pageContent = html`<defie-page-customer-create></defie-page-customer-create>`;
   const lazyImport = html`<script type="module">import('./dist/app/pages/create.js')</script>`;
   return render(pageContent, lazyImport);

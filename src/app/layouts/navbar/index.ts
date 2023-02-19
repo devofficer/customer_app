@@ -10,8 +10,12 @@ export class Navbar extends LitElement {
   @property()
   id: string = '';
 
+  @property()
+  active: string = 'view';
+
   render() {
     return template({
+      active: this.active,
       id: this.id
     });
   }

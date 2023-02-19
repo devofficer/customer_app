@@ -47,7 +47,7 @@ export const template = ({ totalItems, itemsPerPage, currentPage }: PaginationPr
       ${pageItems.map((pageIndex) => {
         if (pageIndex == currentPage)
           return html`<span class="pagination-item selected"><a href="/customers?page=${pageIndex}">${pageIndex}</a></span>`;
-        return html`<span class="pagination-item"><a href="/view?page=${pageIndex}">${pageIndex}</a></span>`;
+        return html`<span class="pagination-item"><a href="/customers?page=${pageIndex}">${pageIndex}</a></span>`;
       })}
       ${currentPage < totalPages ? html`<span class="pagination-item tool-btn"><a href="/customers?page=${currentPage + 1}">Next</a></span>` : ''}
     </div>

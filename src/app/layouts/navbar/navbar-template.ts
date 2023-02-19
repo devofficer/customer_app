@@ -5,6 +5,7 @@ import "../../components/logout/index.js";
 import "../../components/logo/index.js";
 
 interface NavbarProps {
+  active: string
   id: string
 }
 
@@ -14,9 +15,8 @@ export const template = (props : NavbarProps) => {
       <div class="navbar-navs">
         <defie-logo></defie-logo>
         <nav>
-          <defie-nav-link active=${true} label="View" link="/"></defie-nav-link>
-          <defie-nav-link label="Create" link="/create"></defie-nav-link>
-          <defie-nav-link label="Edit" link="/edit"></defie-nav-link>
+          <defie-nav-link .active=${props.active === 'view'} label="View" link="/customers"></defie-nav-link>
+          <defie-nav-link .active=${props.active === 'create'} label="Create" link="/create"></defie-nav-link>
         </nav>
       </div>
       <div class="navbar-profile-wrapper">

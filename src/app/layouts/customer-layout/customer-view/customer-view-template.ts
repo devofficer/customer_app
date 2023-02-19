@@ -1,11 +1,11 @@
 import { html } from "lit";
 import "../../customer-form-container/customer-form-header/index.js";
 import "../../customer-form-container/customer-form-footer/index.js";
-import "../../../components/image-button/index.js";
+import "../../../components/form-elements/form-button/index.js";
 
 export const template = () => {
   const handleClick = () => {
-
+    location.href = "/create";
   }
 
   return html`

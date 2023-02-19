@@ -4,7 +4,7 @@ import staticFiles from 'koa-static';
 import { Readable } from 'stream';
 import { render } from '@lit-labs/ssr';
 import { nodeResolve } from 'koa-node-resolve';
-import { renderCreatePage, renderViewPage } from './app/render.js';
+import { renderCreatePage, renderUpdatePage, renderViewPage } from './app/render.js';
 import { generateMock, getCustomers } from './mock/api.js';
 
 const app = new Koa();
@@ -14,12 +14,24 @@ const router = new Router();
 generateMock(200);
 
 // registering routes
+router.get('/', (req) => {
+  req.redirect('/customers?page=1');
+})
+
 router.get('/customers', (req) => {
-  const page = req.request.query.page ? parseInt(req.request.query.page as string) : 1;
+  if(!req.request.query.page) 
+    req.redirect('/customers?page=1')
+
+  const page = parseInt(req.request.query.page as string);
   const customers = getCustomers(page);
 
   req.type = 'text/html';
   req.body = Readable.from(render(renderViewPage(customers)));
+});
+
+router.get('/update', (req) => {
+  req.type = 'text/html';
+  req.body = Readable.from(render(renderUpdatePage()));
 });
 
 router.get('/create', (ctx) => {
