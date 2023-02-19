@@ -14,7 +14,7 @@ const router = new Router();
 generateMock(200);
 
 // registering routes
-router.get('/view', (req) => {
+router.get('/customers', (req) => {
   const page = req.request.query.page ? parseInt(req.request.query.page as string) : 1;
   const customers = getCustomers(page);
 

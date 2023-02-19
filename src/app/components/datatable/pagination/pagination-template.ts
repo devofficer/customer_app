@@ -43,13 +43,13 @@ export const template = ({ totalItems, itemsPerPage, currentPage }: PaginationPr
 
   return html`
     <div class="pagination-wrapper">
-      ${currentPage > 1 ? html`<span class="pagination-item tool-btn"><a href="/view?page=${currentPage - 1}">Prev</a></span>` : ''}
+      ${currentPage > 1 ? html`<span class="pagination-item tool-btn"><a href="/customers?page=${currentPage - 1}">Prev</a></span>` : ''}
       ${pageItems.map((pageIndex) => {
         if (pageIndex == currentPage)
-          return html`<span class="pagination-item selected"><a href="/view?page=${pageIndex}">${pageIndex}</a></span>`;
+          return html`<span class="pagination-item selected"><a href="/customers?page=${pageIndex}">${pageIndex}</a></span>`;
         return html`<span class="pagination-item"><a href="/view?page=${pageIndex}">${pageIndex}</a></span>`;
       })}
-      ${currentPage < totalPages ? html`<span class="pagination-item tool-btn"><a href="/view?page=${currentPage + 1}">Next</a></span>` : ''}
+      ${currentPage < totalPages ? html`<span class="pagination-item tool-btn"><a href="/customers?page=${currentPage + 1}">Next</a></span>` : ''}
     </div>
   `;
 }
