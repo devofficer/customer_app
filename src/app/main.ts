@@ -50,5 +50,3 @@ export class App extends LitElement {
     `;
   }
 }
-
-console.log('app started...');

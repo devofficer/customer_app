@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "npm-run-all clean build --parallel \"build:watch -- --preserveWatchOutput\" bundle:watch css:watch serve:watch",
+    "start": "npm-run-all clean build --parallel \"build:watch -- --preserveWatchOutput\" bundle:watch css:watch",
     "clean": "rimraf ./dist",
     "clean:prod": "rimraf \"./dist/!(index|main.bundle)*\"",
     "build": "tsc",
@@ -16,7 +16,7 @@
     "css": "postcss ./src/app/main.css --use postcss-import --output ./dist/app/public/main.bundle.css",
     "css:prod": "postcss ./src/app/main.css --use postcss-import cssnano --no-map --output ./dist/app/public/main.bundle.css",
     "css:watch": "npm run css -- --watch",
-    "serve": "web-dev-server --open",
+    "serve": "nodemon ./dist/server.js",
     "serve:watch": "npm run serve -- --watch",
     "lint": "eslint \"src/**/*.ts\"",
     "lint:fix": "npm run lint -- --fix",
@@ -59,6 +59,7 @@
     "koa-node-resolve": "*",
     "koa-static": "^5.0.0",
     "lit": "^2.6.1",
+    "nodemon": "^2.0.20",
     "stream": "^0.0.2"
   }
 }

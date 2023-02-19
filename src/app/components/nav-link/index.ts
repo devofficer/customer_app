@@ -17,7 +17,6 @@ export class Template extends LitElement {
   active?: boolean;
 
   render() {
-    console.log('nav-link');
     return template({
       label: this.label,
       link: this.link,

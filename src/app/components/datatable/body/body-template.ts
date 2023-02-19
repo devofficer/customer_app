@@ -9,7 +9,6 @@ interface TableBodyProps {
 }
 
 export const template = ({ headers, items, renderers }: TableBodyProps) => {
-  console.log(items);
   return html`
     ${items.map((item) => {
       return html`

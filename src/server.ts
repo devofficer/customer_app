@@ -1,31 +1,36 @@
-import Koa from 'koa';
 import Router from '@koa/router';
-import staticFiles from 'koa-static';
-import { nodeResolve } from 'koa-node-resolve';
-import { RenderResultReadable } from '@lit-labs/ssr/lib/render-result-readable.js';
 import { render } from '@lit-labs/ssr';
+import Koa from 'koa';
+import { nodeResolve } from 'koa-node-resolve';
+import staticFiles from 'koa-static';
 
 
-import { renderPage, renderStatic } from './app/render.js';
 import { Readable } from 'stream';
+import { renderCreatePage, renderViewPage } from './app/render.js';
 
 const app = new Koa();
 const router = new Router();
 
 router.get('/', (ctx) => {
   ctx.type = 'text/html';
-  ctx.body = Readable.from(render(renderStatic('view')))
-  // ctx.body = new RenderResultReadable(renderPage('view'));
+  ctx.body = Readable.from(render(renderViewPage()));
 });
 
 router.get('/create', (ctx) => {
   ctx.type = 'text/html';
-  ctx.body = new RenderResultReadable(renderPage('create'));
+  ctx.body = Readable.from(render(renderCreatePage()));
 });
 
 app.use(router.routes());
 app.use(nodeResolve());
-app.use(staticFiles('./app/public'));
+
+// for node_modules
+app.use(staticFiles('.'));
+
+// for components and public
+app.use(staticFiles('./dist'));
+app.use(staticFiles('./dist/app/public'));
+
 app.listen(3000, () => {
   console.log('App is running on the port 3000');
 });
