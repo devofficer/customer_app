@@ -43,3 +43,21 @@ export const getCustomers = (page: number, type: string, keyword: string, pagePe
   return result;
 }
 
+export const getCategories = () => {
+  const categories = {
+    statusType: {
+      ACTIVE: 0,
+      INACTIVE: 1,
+      REACTIVATE: 2
+    },
+    customerTermType: {
+      COD: 0,
+      CREDIT_CARED: 1,
+      NET_1: 2,
+      NET_30: 3,
+      NET_60: 4
+    }
+  };
+  return categories;
+}
+

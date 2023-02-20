@@ -5,7 +5,7 @@ import '../../components/form-elements/form-button/index.js';
 import '../../components/form-elements/form-select/index.js';
 import '../../components/form-elements/form-label/index.js';
 
-export const template = () => {
+export const template = (readonly: boolean, categories: any) => {
 
   const handleChange = (name: string, value: string) => {
     console.log(name, ' ', value);
@@ -23,47 +23,47 @@ export const template = () => {
           </defie-form-label>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Customer *" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="customer" label="Customer *" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Attention *" .handler=${handleChange}>
-              </defie-form-textfield>
-            </div>
-          </div>
-          <div class="form-line">
-            <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Street *" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="attention" label="Attention *" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="City *" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="bill_to_street" label="Street *" .handler=${handleChange}>
+              </defie-form-textfield>
+            </div>
+          </div>
+          <div class="form-line">
+            <div class="form-item-wrapper">
+              <defie-form-textfield .readonly=${readonly} name="bill_to_city" label="City *" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-select name="billing-state" label="State *" .handler=${handleChange}>
+              <defie-form-select .readonly=${readonly} name="bill_to_state" label="State *" .handler=${handleChange}>
               </defie-form-select>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Zip Code *" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="bill_to_zip_code" label="Zip Code *" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-select name="billing-country" label="Country *" .handler=${handleChange}>
+              <defie-form-select .readonly=${readonly} name="bill_to_country" label="Country *" .handler=${handleChange}>
               </defie-form-select>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Phone *" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="bill_to_phone" label="Phone *" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Domain *" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="domain" label="Domain *" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -73,47 +73,47 @@ export const template = () => {
           </defie-form-label>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Ship To*" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="ship_to" label="Ship To*" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Reference *" .handler=${handleChange}>
-              </defie-form-textfield>
-            </div>
-          </div>
-          <div class="form-line">
-            <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Street *" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="reference" label="Reference *" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="City *" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="ship_to_street" label="Street *" .handler=${handleChange}>
+              </defie-form-textfield>
+            </div>
+          </div>
+          <div class="form-line">
+            <div class="form-item-wrapper">
+              <defie-form-textfield .readonly=${readonly} name="ship_to_city" label="City *" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-select name="ship-state" label="State *" .handler=${handleChange}>
+              <defie-form-select .readonly=${readonly} name="ship_to_state " label="State *" .handler=${handleChange}>
               </defie-form-select>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Zip Code *" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="ship_to_zip_code" label="Zip Code *" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-select name="ship-state" label="Country *" .handler=${handleChange}>
+              <defie-form-select .readonly=${readonly} name="ship_to_country" label="Country *" .handler=${handleChange}>
               </defie-form-select>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Phone *" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="ship_to_phone" label="Phone *" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-select name="ship-state" label="Nexus *" .handler=${handleChange}>
+              <defie-form-select .readonly=${readonly} name="nexus" label="Nexus *" .handler=${handleChange}>
               </defie-form-select>
             </div>
           </div>
@@ -125,38 +125,38 @@ export const template = () => {
           </defie-form-label>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Name" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="contact_name" label="Name" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Email" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="contact_email" label="Email" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
     
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Phone" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="contact_phone" label="Phone" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Mobile" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="contact_mobile" label="Mobile" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-select name="billing-state" label="Title" .handler=${handleChange}>
+              <defie-form-select .readonly=${readonly} name="contact_title" label="Title" .handler=${handleChange}>
               </defie-form-select>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-select name="billing-state" label="Department" .handler=${handleChange}>
+              <defie-form-select .readonly=${readonly} name="contact_department" label="Department" .handler=${handleChange}>
               </defie-form-select>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Address" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="contact_address" label="Address" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -166,38 +166,38 @@ export const template = () => {
           </defie-form-label>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Name" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="acct_mgr_name" label="Name" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Email" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="acct_mgr_email" label="Email" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
     
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Phone" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="acct_mgr_phone" label="Phone" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Mobile" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="acct_mgr_mobile" label="Mobile" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-select name="ship-state" label="Title" .handler=${handleChange}>
+              <defie-form-select .readonly=${readonly} name="acct_mgr_title" label="Title" .handler=${handleChange}>
               </defie-form-select>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-select name="ship-state" label="Department" .handler=${handleChange}>
+              <defie-form-select .readonly=${readonly} name="acct_mgr_department" label="Department" .handler=${handleChange}>
               </defie-form-select>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Address" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="acct_mgr_address" label="Address" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -209,62 +209,62 @@ export const template = () => {
           </defie-form-label>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-select name="billing-state" label="Term" .handler=${handleChange}>
+              <defie-form-select .categories=${categories.customerTermType} .readonly=${readonly} name="customer_term" label="Term" .handler=${handleChange}>
               </defie-form-select>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Effective date" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="effective_date" label="Effective date" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
     
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Credit Limit(USD)" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="customer_credit_limit" label="Credit Limit(USD)" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Reseller Permit" .handler=${handleChange}>
-              </defie-form-textfield>
-            </div>
-          </div>
-          <div class="form-line">
-            <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Tax District" .handler=${handleChange}>
-              </defie-form-textfield>
-            </div>
-            <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Federal Tax ID" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="reseller_permit" label="Reseller Permit" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Tax Rate(%)" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="tax_district" label="Tax District" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-select name="billing-state" label="Tax Code" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="federal_tax_id" label="Federal Tax ID" .handler=${handleChange}>
+              </defie-form-textfield>
+            </div>
+          </div>
+          <div class="form-line">
+            <div class="form-item-wrapper">
+              <defie-form-textfield .readonly=${readonly} name="tax_rate" label="Tax Rate(%)" .handler=${handleChange}>
+              </defie-form-textfield>
+            </div>
+            <div class="form-item-wrapper">
+              <defie-form-select .readonly=${readonly} name="tax_code" label="Tax Code" .handler=${handleChange}>
               </defie-form-select>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-checkbox name="credit_hold" label="Credit Hold" .handler=${handleChange}>
+              <defie-form-checkbox .readonly=${readonly} name="credit_hold" label="Credit Hold" .handler=${handleChange}>
               </defie-form-checkbox>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Credit Hold Reason" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="credit_hold_reason" label="Credit Hold Reason" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-checkbox name="recurring_billing" label="Recurring Billing" .handler=${handleChange}>
+              <defie-form-checkbox .readonly=${readonly} name="recurring_billing" label="Recurring Billing" .handler=${handleChange}>
               </defie-form-checkbox>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Recurring Date" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="recurring_date" label="Recurring Date" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -274,62 +274,62 @@ export const template = () => {
           </defie-form-label>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="AR Name" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="ar_name" label="AR Name" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="AR Email" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="ar_email" label="AR Email" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
     
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="AR Title" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="ar_title" label="AR Title" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="AR Phone" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="ar_phone" label="AR Phone" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Created On" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="created_on" label="Created On" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-select name="ship-state" label="Status" .handler=${handleChange}>
+              <defie-form-select .categories=${categories.statusType} .readonly=${readonly} name="status" label="Status" .handler=${handleChange}>
               </defie-form-select>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Past-Due(USD)" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="past_due" label="Past-Due(USD)" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Open Credit(USD)" .handler=${handleChange}>
-              </defie-form-textfield>
-            </div>
-          </div>
-          <div class="form-line">
-            <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Oopen Sales Order(USD)" .handler=${handleChange}>
-              </defie-form-textfield>
-            </div>
-            <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="YTD Sales(USD)" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="open_credit" label="Open Credit(USD)" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Balance (USD)" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="open_sales_orders" label="Oopen Sales Order(USD)" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Last Invoice Date" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="ytd_sales" label="YTD Sales(USD)" .handler=${handleChange}>
+              </defie-form-textfield>
+            </div>
+          </div>
+          <div class="form-line">
+            <div class="form-item-wrapper">
+              <defie-form-textfield .readonly=${readonly} name="balance" label="Balance (USD)" .handler=${handleChange}>
+              </defie-form-textfield>
+            </div>
+            <div class="form-item-wrapper">
+              <defie-form-textfield .readonly=${readonly} name="last_invoice_date" label="Last Invoice Date" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -341,48 +341,48 @@ export const template = () => {
           </defie-form-label>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Bank Name" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="bank1_name" label="Bank Name" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Account No" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="bank1_account_no" label="Account No" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
     
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Route No" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="bank1_route_no" label="Route No" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Swift No" .handler=${handleChange}>
-              </defie-form-textfield>
-            </div>
-          </div>
-          <div class="form-line">
-            <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Address" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="bank1_swift_no" label="Swift No" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Contact Name" .handler=${handleChange}>
-              </defie-form-textfield>
-            </div>
-            <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Phone" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="bank1_address" label="Address" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Email" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name=" bank1_contact" label="Contact Name" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Title" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="bank1_phone" label="Phone" .handler=${handleChange}>
+              </defie-form-textfield>
+            </div>
+          </div>
+          <div class="form-line">
+            <div class="form-item-wrapper">
+              <defie-form-textfield .readonly=${readonly} name="bank1_email" label="Email" .handler=${handleChange}>
+              </defie-form-textfield>
+            </div>
+            <div class="form-item-wrapper">
+              <defie-form-textfield .readonly=${readonly} name="bank1_contact_title" label="Title" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -392,48 +392,48 @@ export const template = () => {
           </defie-form-label>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Company Name" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="company_name" label="Company Name" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Account ID" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="account_id" label="Account ID" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
     
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Address" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="address" label="Address" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Contact" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="contact" label="Contact" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Phone" .handler=${handleChange}>
-              </defie-form-textfield>
-            </div>
-          </div>
-          <div class="form-line">
-            <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Email" .handler=${handleChange}>
-              </defie-form-textfield>
-            </div>
-            <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Title" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="phone" label="Phone" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
-              <defie-form-select name="ship-state" label="Term" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="email" label="Email" .handler=${handleChange}>
+              </defie-form-textfield>
+            </div>
+            <div class="form-item-wrapper">
+              <defie-form-textfield .readonly=${readonly} name="title" label="Title" .handler=${handleChange}>
+              </defie-form-textfield>
+            </div>
+          </div>
+          <div class="form-line">
+            <div class="form-item-wrapper">
+              <defie-form-select .categories=${categories.customerTermType} .readonly=${readonly} name="term" label="Term" .handler=${handleChange}>
               </defie-form-select>
             </div>
             <div class="form-item-wrapper">
-              <defie-form-textfield name="textfield" label="Credit Limit(USD)" .handler=${handleChange}>
+              <defie-form-textfield .readonly=${readonly} name="credit_limit" label="Credit Limit(USD)" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>

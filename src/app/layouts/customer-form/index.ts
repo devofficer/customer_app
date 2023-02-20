@@ -1,5 +1,5 @@
 import { LitElement } from "lit";
-import { customElement, state } from "lit/decorators.js";
+import { customElement, property, state } from "lit/decorators.js";
 import { styles } from "./customer-form-css.js";
 import { template } from "./customer-form-template.js";
 
@@ -13,7 +13,10 @@ export class CustomerForm extends LitElement {
     credit_hold_reason: '',
   }
 
+  @property() readonly: boolean = false; 
+  @property() categories: any = {};
+
   render() {
-    return template();
+    return template(this.readonly, this.categories);
   }
 }

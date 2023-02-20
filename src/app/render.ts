@@ -70,8 +70,8 @@ export const renderViewPage = (customers: any) => {
   return render(pageContent, lazyImport);
 }
 
-export const renderCreatePage = () => {
-  const pageContent = html`<defie-page-customer-create></defie-page-customer-create>`;
+export const renderCreatePage = (categories: any) => {
+  const pageContent = html`<defie-page-customer-create .categories=${categories}></defie-page-customer-create>`;
   const lazyImport = html`<script type="module">import('./dist/app/pages/create.js')</script>`;
   return render(pageContent, lazyImport);
 }

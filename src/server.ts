@@ -5,7 +5,7 @@ import { Readable } from 'stream';
 import { render } from '@lit-labs/ssr';
 import { nodeResolve } from 'koa-node-resolve';
 import { renderCreatePage, renderUpdatePage, renderViewPage } from './app/render.js';
-import { generateMock, getCustomers } from './mock/api.js';
+import { generateMock, getCategories, getCustomers } from './mock/api.js';
 
 const app = new Koa();
 const router = new Router();
@@ -38,8 +38,9 @@ router.get('/update', (req) => {
 });
 
 router.get('/create', (ctx) => {
+  const categories = getCategories();
   ctx.type = 'text/html';
-  ctx.body = Readable.from(render(renderCreatePage()));
+  ctx.body = Readable.from(render(renderCreatePage(categories)));
 });
 
 app.use(router.routes());

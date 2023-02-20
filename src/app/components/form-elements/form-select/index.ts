@@ -1,5 +1,5 @@
 import { LitElement } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, eventOptions, property } from "lit/decorators.js";
 import { styles } from "../form-elements-css.js";
 import { template } from "./form-select-template.js";
 
@@ -19,6 +19,9 @@ export class CheckBox extends LitElement {
   @property()
   handler!: (name: string, value: string) => void; 
 
+  @property()
+  categories: any = {};
+
   handleChange(event: Event) {
     const element = event.target as HTMLInputElement;
     this.handler(element.name, element.value);
@@ -30,6 +33,7 @@ export class CheckBox extends LitElement {
       label: this.label,
       readonly: this.readonly,
       handler: this.handleChange,
+      categories: this.categories
     });
   }
 }
