@@ -1,5 +1,5 @@
 import { LitElement } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 import { styles } from "./filters-css.js";
 import { template } from "./filters-template.js";
 
@@ -7,7 +7,13 @@ import { template } from "./filters-template.js";
 export class Template extends LitElement {
   static styles = styles;
   
+  @property() type:string = "";
+  @property() keyword: string = "";
+
   render() {
-    return template();
+    return template({
+      type: this.type,
+      keyword: this.keyword
+    });
   }
 }

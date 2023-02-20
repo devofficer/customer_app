@@ -29,7 +29,7 @@ export const template = (customers: any) => {
 
   return html`
     <div>
-      <defie-datatable-filter>
+      <defie-datatable-filter type=${customers.type} keyword=${customers.keyword}>
       </defie-datatable-filter>
       <defie-datatable-pagination 
         .totalItems=${customers.totalItems} 

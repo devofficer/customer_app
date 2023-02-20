@@ -1,4 +1,6 @@
 import { html } from "lit";
+import "./item/index.js";
+import { generateQueryUrl } from "../../../utils/index.js";
 
 interface PaginationProps {
   totalItems: number
@@ -33,8 +35,6 @@ const getPaginationItems = (totalItems: number, itemsPerpage: number, currentPag
     pageItems.push(page);
   }
   if (endPage < totalPages) pageItems.push("...");
-  if(pageItems.length == 0)
-    pageItems.push('aa');  
   return { totalPages, startPage, endPage, pageItems };
 }
 
@@ -43,13 +43,13 @@ export const template = ({ totalItems, itemsPerPage, currentPage }: PaginationPr
 
   return html`
     <div class="pagination-wrapper">
-      ${currentPage > 1 ? html`<span class="pagination-item tool-btn"><a href="/customers?page=${currentPage - 1}">Prev</a></span>` : ''}
+      ${currentPage > 1 ? html`<defie-datatable-pagination-item data-page=${currentPage - 1}>Prev</defie-datatable-pagination-item>` : ''}
       ${pageItems.map((pageIndex) => {
         if (pageIndex == currentPage)
-          return html`<span class="pagination-item selected"><a href="/customers?page=${pageIndex}">${pageIndex}</a></span>`;
-        return html`<span class="pagination-item"><a href="/customers?page=${pageIndex}">${pageIndex}</a></span>`;
+          return html`<defie-datatable-pagination-item class="selected" data-page=${pageIndex}>${pageIndex}</defie-datatable-pagination-item>`;
+        return html`<defie-datatable-pagination-item data-page=${pageIndex}>${pageIndex}</defie-datatable-pagination-item>`;
       })}
-      ${currentPage < totalPages ? html`<span class="pagination-item tool-btn"><a href="/customers?page=${currentPage + 1}">Next</a></span>` : ''}
+      ${currentPage < totalPages ? html`<defie-datatable-pagination-item data-page=${currentPage + 1}>Next</defie-datatable-pagination-item>` : ''}
     </div>
   `;
 }

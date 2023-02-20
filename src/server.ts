@@ -23,7 +23,10 @@ router.get('/customers', (req) => {
     req.redirect('/customers?page=1')
 
   const page = parseInt(req.request.query.page as string);
-  const customers = getCustomers(page);
+  const type = req.request.query.type as string;
+  const keyword = req.request.query.keyword as string;
+
+  const customers = getCustomers(page, type, keyword);
 
   req.type = 'text/html';
   req.body = Readable.from(render(renderViewPage(customers)));

@@ -21,14 +21,24 @@ export const generateMock = (total: number) => {
   mock_customers = result;
 }
 
-export const getCustomers = (page: number, pagePerCount: number = 25) => {
+export const getCustomers = (page: number, type: string, keyword: string, pagePerCount: number = 25) => {
   const start = (page - 1) * pagePerCount + 1;
   const end = start + pagePerCount;
+
+  let filteredCustomers = mock_customers;
+  if(type && keyword) {
+    filteredCustomers = mock_customers.filter((customer) => {
+      return customer[type].includes(keyword);
+    })
+  }
+  
   const result = {
-    totalItems: mock_customers.length,
+    totalItems: filteredCustomers.length,
     currentPage: page,
+    type: type,
+    keyword: keyword,
     itemsPerPage: pagePerCount,
-    data: mock_customers.slice(start, end)
+    data: filteredCustomers.slice(start, end),
   }
   return result;
 }

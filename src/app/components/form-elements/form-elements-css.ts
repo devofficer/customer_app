@@ -58,4 +58,21 @@ export const styles = css`
   .form-input:focus {
     border-bottom: 2px solid #434343;
   }
+
+  .form-radio-label:before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-right: 10px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  
+  .form-radio-label.checked:before {
+    background-color: #007bff;
+    border-color: black;
+  }
 `;

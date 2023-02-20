@@ -1,4 +1,4 @@
-import { LitElement } from "lit";
+import { LitElement, isServer } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { styles } from "./pagination-css.js";
 import { template } from "./pagination-template.js";

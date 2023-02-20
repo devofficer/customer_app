@@ -1,11 +1,19 @@
 export const generateQueryUrl = (params: any) => {
   const url = new URL(location.href);
-  const basepath = url.pathname;
-  for(let key in params) {
+  for (let key in params) {
     const param = params[key];
     url.searchParams.set(key, param);
   }
-  console.log(url.toString());
+
+  const keyword = params['keyword'];
+  if (keyword && keyword.length == 0) {
+    url.searchParams.delete('type');
+    url.searchParams.delete('keyword');
+  } else if (keyword && keyword.length > 0) {
+    url.searchParams.set('page', '1');
+  }
+  // console.log(url.toString());
+  location.href = url.toString();
 }
 
 export const routeChange = (url: string) => {
