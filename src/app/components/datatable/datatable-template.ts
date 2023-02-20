@@ -23,7 +23,7 @@ export const template = (customers: any) => {
       return html`<img class="icon-button" src="./assets/buttons/edit.png" alt="${cellValue}"/>`
     },
     customer_id: (cellValue: string) => {
-      return html`<a class="link-button" href="/update?id=${cellValue}">${cellValue.substring(0, 16)}...</a>`
+      return html`<a class="link-button" href="/view?id=${cellValue}">${cellValue.substring(0, 16)}...</a>`
     }
   }
 

@@ -1,14 +1,13 @@
-import Koa from 'koa';
 import Router from '@koa/router';
-import staticFiles from 'koa-static';
-import bodyParser from 'koa-bodyparser';
-import { Readable } from 'stream';
 import { render } from '@lit-labs/ssr';
+import Koa from 'koa';
+import bodyParser from 'koa-bodyparser';
 import { nodeResolve } from 'koa-node-resolve';
-import { renderCreatePage, renderUpdatePage, renderViewPage } from './app/render.js';
-import { generateMock, getCategories, getCustomers } from './mock/api.js';
-import { addCustomer } from './mock/api.js';
+import staticFiles from 'koa-static';
+import { Readable } from 'stream';
 import { CustomerFormProps } from './app/layouts/customer-form/index.js';
+import { renderCreatePage, renderListPage, renderViewPage } from './app/render.js';
+import { addCustomer, generateMock, getCategories, getCustomers } from './mock/api.js';
 
 const app = new Koa();
 const router = new Router();
@@ -32,12 +31,12 @@ router.get('/customers', (req) => {
   const customers = getCustomers(page, type, keyword);
 
   req.type = 'text/html';
-  req.body = Readable.from(render(renderViewPage(customers)));
+  req.body = Readable.from(render(renderListPage(customers)));
 });
 
-router.get('/update', (req) => {
+router.get('/view', (req) => {
   req.type = 'text/html';
-  req.body = Readable.from(render(renderUpdatePage()));
+  req.body = Readable.from(render(renderViewPage()));
 });
 
 router.get('/create', (ctx) => {
