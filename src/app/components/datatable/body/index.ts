@@ -15,6 +15,8 @@ export interface TableItemRenderer {
 @customElement('defie-datatable-body')
 export class Template extends LitElement {
   static styles = styles;
+
+
   
   @property()
   headers: TableHeaderProps[] =[]

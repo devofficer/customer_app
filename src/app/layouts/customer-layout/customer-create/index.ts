@@ -1,5 +1,5 @@
 import { LitElement } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 import { styles } from "../customer-layout-css.js";
 import { template } from "./customer-create-template.js";
 
@@ -7,7 +7,11 @@ import { template } from "./customer-create-template.js";
 export class CustomerCreate extends LitElement {
   static styles = styles;
 
+  @property() handleSave!: () => void;
+
   render() {
-    return template();
+    return template({
+      handleSave: this.handleSave
+    });
   }
 }

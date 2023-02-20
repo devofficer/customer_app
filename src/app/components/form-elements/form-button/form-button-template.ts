@@ -6,7 +6,7 @@ interface ButtonProps {
 
 export const template = (props: ButtonProps) => {
   return html`
-    <button @click=${props.handler} class="form-button">
+    <button type="submit" @click=${props.handler} class="form-button">
       <slot></slot>
     </button>
   `;

@@ -16,6 +16,6 @@ export const generateQueryUrl = (params: any) => {
   location.href = url.toString();
 }
 
-export const routeChange = (url: string) => {
+export const changeRoute = (url: string) => {
   location.href = url;
 }

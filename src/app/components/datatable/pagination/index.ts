@@ -6,7 +6,7 @@ import { template } from "./pagination-template.js";
 @customElement('defie-datatable-pagination')
 export class Template extends LitElement {
   static styles = styles;
-
+  
   @property()
   totalItems: number = 0;
 

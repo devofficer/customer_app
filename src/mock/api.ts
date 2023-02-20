@@ -2,6 +2,16 @@ import { customers } from './data.js';
 
 let mock_customers:any[] = [];
 
+function generateRandomString(length: number) {
+  let result = '';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
 export const generateMock = (total: number) => {
   const result = [];
   let customer_id = 0;
@@ -22,7 +32,7 @@ export const generateMock = (total: number) => {
 }
 
 export const getCustomers = (page: number, type: string, keyword: string, pagePerCount: number = 25) => {
-  const start = (page - 1) * pagePerCount + 1;
+  const start = (page - 1) * pagePerCount;
   const end = start + pagePerCount;
 
   let filteredCustomers = mock_customers;
@@ -41,6 +51,15 @@ export const getCustomers = (page: number, type: string, keyword: string, pagePe
     data: filteredCustomers.slice(start, end),
   }
   return result;
+}
+
+export const addCustomer = (customer: any) => {
+  const customer_id = generateRandomString(32);
+  mock_customers.unshift({
+    customer_id: customer_id,  
+    ...customer
+  });
+  console.log(mock_customers[0]);
 }
 
 export const getCategories = () => {

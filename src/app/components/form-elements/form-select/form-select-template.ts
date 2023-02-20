@@ -1,4 +1,4 @@
-import { html } from "lit";
+import { html, isServer } from "lit";
 
 interface CheckBoxProps {
   name: string;
@@ -18,7 +18,7 @@ export const template = (props: CheckBoxProps) => {
           html`<input ?readonly=${props.readonly} class="form-input" name="${props.name}" @change=${props.handler} />` : 
           html`<div class="select-wrapper">
               <select @change=${props.handler} name="${props.name}" class="form-select">
-                ${Object.keys(props.categories ? props.categories : {}).map((key:any) => {
+                ${isServer && Object.keys(props.categories ? props.categories : {}).map((key:any) => {
                   return html`<option value=${props.categories[key]}>${key}</option>`
                 })}
               </select>

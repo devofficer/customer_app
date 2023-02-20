@@ -1,4 +1,4 @@
-import { html } from "lit";
+import { html, isServer } from "lit";
 import "./item/index.js";
 import { generateQueryUrl } from "../../../utils/index.js";
 
@@ -44,7 +44,7 @@ export const template = ({ totalItems, itemsPerPage, currentPage }: PaginationPr
   return html`
     <div class="pagination-wrapper">
       ${currentPage > 1 ? html`<defie-datatable-pagination-item data-page=${currentPage - 1}>Prev</defie-datatable-pagination-item>` : ''}
-      ${pageItems.map((pageIndex) => {
+      ${isServer && pageItems.map((pageIndex) => {
         if (pageIndex == currentPage)
           return html`<defie-datatable-pagination-item class="selected" data-page=${pageIndex}>${pageIndex}</defie-datatable-pagination-item>`;
         return html`<defie-datatable-pagination-item data-page=${pageIndex}>${pageIndex}</defie-datatable-pagination-item>`;

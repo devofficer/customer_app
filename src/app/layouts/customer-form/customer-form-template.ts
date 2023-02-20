@@ -5,14 +5,15 @@ import '../../components/form-elements/form-button/index.js';
 import '../../components/form-elements/form-select/index.js';
 import '../../components/form-elements/form-label/index.js';
 
-export const template = (readonly: boolean, categories: any) => {
+interface CustomerFormProps {
+  readonly: boolean
+  categories: any
+  handler: (name: string, value: string) => void;
+}
 
+export const template = ({ readonly, categories, handler }: CustomerFormProps) => {
   const handleChange = (name: string, value: string) => {
-    console.log(name, ' ', value);
-  }
-
-  const handleClick = () => {
-    alert('click');
+    handler(name, value);
   }
 
   return html`
@@ -24,38 +25,38 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="customer"
-               label="Customer *"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="customer"
+              label="Customer *"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="attention"
-               label="Attention *"
-               .handler=${handleChange}>
-              </defie-form-textfield>
-            </div>
-          </div>
-          <div class="form-line">
-            <div class="form-item-wrapper">
-              <defie-form-textfield
-               .readonly=${readonly}
-               name="bill_to_street"
-               label="Street *"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="attention"
+              label="Attention *"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="bill_to_city"
-               label="City *"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="bill_to_street"
+              label="Street *"
+              .handler=${handleChange}>
+              </defie-form-textfield>
+            </div>
+          </div>
+          <div class="form-line">
+            <div class="form-item-wrapper">
+              <defie-form-textfield
+              .readonly=${readonly}
+              name="bill_to_city"
+              label="City *"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
@@ -66,10 +67,10 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="bill_to_zip_code"
-               label="Zip Code
-               *" .handler=${handleChange}>
+              .readonly=${readonly}
+              name="bill_to_zip_code"
+              label="Zip Code
+              *" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
@@ -80,18 +81,18 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="bill_to_phone"
-               label="Phone *"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="bill_to_phone"
+              label="Phone *"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="domain"
-               label="Domain *"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="domain"
+              label="Domain *"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -102,38 +103,38 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="ship_to"
-               label="Ship To
-               " .handler=${handleChange}>
+              .readonly=${readonly}
+              name="ship_to"
+              label="Ship To
+              " .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="reference"
-               label="Reference *"
-               .handler=${handleChange}>
-              </defie-form-textfield>
-            </div>
-          </div>
-          <div class="form-line">
-            <div class="form-item-wrapper">
-              <defie-form-textfield
-               .readonly=${readonly}
-               name="ship_to_street"
-               label="Street *"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="reference"
+              label="Reference *"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="ship_to_city"
-               label="City *"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="ship_to_street"
+              label="Street *"
+              .handler=${handleChange}>
+              </defie-form-textfield>
+            </div>
+          </div>
+          <div class="form-line">
+            <div class="form-item-wrapper">
+              <defie-form-textfield
+              .readonly=${readonly}
+              name="ship_to_city"
+              label="City *"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
@@ -144,10 +145,10 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="ship_to_zip_code"
-               label="Zip Code
-               *" .handler=${handleChange}>
+              .readonly=${readonly}
+              name="ship_to_zip_code"
+              label="Zip Code
+              *" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
@@ -162,10 +163,10 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="ship_to_phone"
-               label="Phone *"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="ship_to_phone"
+              label="Phone *"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
@@ -186,18 +187,18 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="contact_name"
-               label="Name"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="contact_name"
+              label="Name"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="contact_email"
-               label="Email"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="contact_email"
+              label="Email"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -205,18 +206,18 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="contact_phone"
-               label="Phone"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="contact_phone"
+              label="Phone"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="contact_mobile"
-               label="Mobile"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="contact_mobile"
+              label="Mobile"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -241,10 +242,10 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="contact_address"
-               label="Address"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="contact_address"
+              label="Address"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -255,18 +256,18 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="acct_mgr_name"
-               label="Name"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="acct_mgr_name"
+              label="Name"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="acct_mgr_email"
-               label="Email"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="acct_mgr_email"
+              label="Email"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -274,18 +275,18 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="acct_mgr_phone"
-               label="Phone"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="acct_mgr_phone"
+              label="Phone"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="acct_mgr_mobile"
-               label="Mobile"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="acct_mgr_mobile"
+              label="Mobile"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -310,10 +311,10 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="acct_mgr_address"
-               label="Address"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="acct_mgr_address"
+              label="Address"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -346,10 +347,10 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="customer_credit_limit"
-               label="Credit Limit (USD)" 
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="customer_credit_limit"
+              label="Credit Limit (USD)" 
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
@@ -372,20 +373,20 @@ export const template = (readonly: boolean, categories: any) => {
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="federal_tax_id"
-               label="Federal Tax
-               ID" .handler=${handleChange}>
+              .readonly=${readonly}
+              name="federal_tax_id"
+              label="Federal Tax
+              ID" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="tax_rate"
-               label="Tax Rate
-               %)" .handler=${handleChange}>
+              .readonly=${readonly}
+              name="tax_rate"
+              label="Tax Rate
+              %)" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
@@ -400,10 +401,10 @@ export const template = (readonly: boolean, categories: any) => {
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="credit_hold_reason"
-               label="Credit Hold
-               Reason" .handler=${handleChange}>
+              .readonly=${readonly}
+              name="credit_hold_reason"
+              label="Credit Hold
+              Reason" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -488,28 +489,28 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="past_due"
-               label="Past-Due (USD)" 
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="past_due"
+              label="Past-Due (USD)" 
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="open_credit"
-               label="Open Credit (USD)" 
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="open_credit"
+              label="Open Credit (USD)" 
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="open_sales_orders"
-               label="Open Sales Order(USD)" 
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="open_sales_orders"
+              label="Open Sales Order(USD)" 
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
@@ -532,10 +533,10 @@ export const template = (readonly: boolean, categories: any) => {
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="last_invoice_date"
-               label="Last Invoice Date" 
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="last_invoice_date"
+              label="Last Invoice Date" 
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -575,7 +576,7 @@ export const template = (readonly: boolean, categories: any) => {
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
+              .readonly=${readonly}
                 name="bank1_swift_no"
                 label="Swift No"
                 .handler=${handleChange}>
@@ -585,10 +586,10 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="bank1_address"
-               label="Address"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="bank1_address"
+              label="Address"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -603,28 +604,28 @@ export const template = (readonly: boolean, categories: any) => {
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="bank1_phone"
-               label="Phone"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="bank1_phone"
+              label="Phone"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="bank1_email"
-               label="Email"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="bank1_email"
+              label="Email"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="bank1_contact_title"
-               label="Title"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="bank1_contact_title"
+              label="Title"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -643,7 +644,7 @@ export const template = (readonly: boolean, categories: any) => {
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
+              .readonly=${readonly}
                 name="account_id"
                 label="Account ID"
                 .handler=${handleChange}>
@@ -654,46 +655,46 @@ export const template = (readonly: boolean, categories: any) => {
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="address"
-               label="Address"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="address"
+              label="Address"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="contact"
-               label="Contact"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="contact"
+              label="Contact"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="phone"
-               label="Phone"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="phone"
+              label="Phone"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
           <div class="form-line">
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="email"
-               label="Email"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="email"
+              label="Email"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="title"
-               label="Title"
-               .handler=${handleChange}>
+              .readonly=${readonly}
+              name="title"
+              label="Title"
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>
@@ -704,9 +705,9 @@ export const template = (readonly: boolean, categories: any) => {
             </div>
             <div class="form-item-wrapper">
               <defie-form-textfield
-               .readonly=${readonly}
-               name="credit_limit"
-               label="Credit Limit (USD)" .handler=${handleChange}>
+              .readonly=${readonly}
+              name="credit_limit"
+              label="Credit Limit (USD)" .handler=${handleChange}>
               </defie-form-textfield>
             </div>
           </div>

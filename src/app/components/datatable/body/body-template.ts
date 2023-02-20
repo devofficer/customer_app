@@ -1,4 +1,4 @@
-import { html } from "lit";
+import { html, isServer } from "lit";
 import { TableItemProps, TableItemRenderer } from "./index.js";
 import { TableHeaderProps } from "../header/index.js";
 
@@ -10,7 +10,7 @@ interface TableBodyProps {
 
 export const template = ({ headers, items, renderers }: TableBodyProps) => {
   return html`
-    ${items.map((item) => {
+    ${isServer && items.map((item) => {
       return html`
         <div class="body-wrapper">
         ${headers.map((header) => {

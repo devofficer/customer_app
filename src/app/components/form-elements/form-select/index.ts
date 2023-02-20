@@ -4,7 +4,7 @@ import { styles } from "../form-elements-css.js";
 import { template } from "./form-select-template.js";
 
 @customElement('defie-form-select')
-export class CheckBox extends LitElement {
+export class SelectBox extends LitElement {
   static styles = styles;
 
   @property()
