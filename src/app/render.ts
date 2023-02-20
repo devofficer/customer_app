@@ -77,8 +77,8 @@ export const renderCreatePage = (categories: any) => {
   return render(pageContent, lazyImport);
 }
 
-export const renderViewPage = () => {
-  const pageContent = html`<defie-page-customer-view></defie-page-customer-view>`;
-  const lazyImport = html`<script type="module">import('./dist/app/pages/viwe.js')</script>`;
+export const renderViewPage = (customer: any) => {
+  const pageContent = html`<defie-page-customer-view .customer=${customer}></defie-page-customer-view>`;
+  const lazyImport = html`<script type="module">import('./dist/app/pages/view.js')</script>`;
   return render(pageContent, lazyImport);
 }

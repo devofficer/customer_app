@@ -13,6 +13,7 @@ export class CustomerForm extends LitElement {
 
   @property() readonly: boolean = false; 
   @property() categories: any = {};
+  @property() values!: CustomerFormProps;
   @property() handleChange!: (name: string, value: string) => void;
   
   render() {
@@ -20,6 +21,7 @@ export class CustomerForm extends LitElement {
       readonly: this.readonly,
       categories: this.categories,
       handler: this.handleChange,
+      values: this.values
     });
   }
 }

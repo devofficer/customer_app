@@ -7,7 +7,7 @@ import staticFiles from 'koa-static';
 import { Readable } from 'stream';
 import { CustomerFormProps } from './app/layouts/customer-form/index.js';
 import { renderCreatePage, renderListPage, renderViewPage } from './app/render.js';
-import { addCustomer, generateMock, getCategories, getCustomers } from './mock/api.js';
+import { addCustomer, generateMock, getCategories, getCustomer, getCustomers } from './mock/api.js';
 
 const app = new Koa();
 const router = new Router();
@@ -35,8 +35,14 @@ router.get('/customers', (req) => {
 });
 
 router.get('/view', (req) => {
+  if(!req.request.query.id)
+    req.redirect('/customers?page=1');
+
+  const customer_id = req.request.query.id as string;
+  const customer = getCustomer(customer_id);
+
   req.type = 'text/html';
-  req.body = Readable.from(render(renderViewPage()));
+  req.body = Readable.from(render(renderViewPage(customer)));
 });
 
 router.get('/create', (ctx) => {

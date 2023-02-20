@@ -17,6 +17,9 @@ export class CheckBox extends LitElement {
   readonly: boolean = true;
 
   @property()
+  defaultValue: string = '';
+
+  @property()
   handler!: (name: string, value: string) => void;
 
   handleChange(event: Event) {
@@ -32,6 +35,7 @@ export class CheckBox extends LitElement {
       label: this.label,
       readonly: this.readonly,
       handler: this.handleChange,
+      defaultValue: this.defaultValue
     });
   }
 }
