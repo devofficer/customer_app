@@ -16,7 +16,7 @@ export const template = ({ type, keyword }: FilterProps) => {
     const element = event.target as HTMLInputElement;
     const value = element.value;
     filter[type] = value;
-    const url = generateQueryUrl(filter);
+    generateQueryUrl(filter);
   }
 
   const handleChangeKeyword = (event: Event) => {
@@ -26,8 +26,6 @@ export const template = ({ type, keyword }: FilterProps) => {
   const handleChangeType = (event: Event) => {
     handleChangeFilter(event, 'type');
   }
-
-  console.log(filter.type === 'customer_id')
 
   return html`
     <div class="filter-wrapper">
