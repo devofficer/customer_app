@@ -102,7 +102,7 @@ export class App extends LitElement {
 
   protected handleSave = async () => {
     await createCustomer(this.information);
-    // changeRoute('/customers');
+    changeRoute('/customers');
   }
 
   render() {

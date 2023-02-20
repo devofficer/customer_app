@@ -74,10 +74,10 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
               .readonly=${readonly}
-              name="bill_to_zip_cod
-              .defaultValue=${values?.bill_to_zip_co}e"
-              label="Zip Code
-              *" .handler=${handleChange}>
+              name="bill_to_zip_code"
+              .defaultValue=${values?.bill_to_zip_code}
+              label="Zip Code*" 
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
@@ -159,10 +159,10 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
               .readonly=${readonly}
-              name="ship_to_zip_cod
-              .defaultValue=${values?.ship_to_zip_co}e"
-              label="Zip Code
-              *" .handler=${handleChange}>
+              name="ship_to_zip_code"
+              .defaultValue=${values?.ship_to_zip_code}
+              label="Zip Code*" 
+              .handler=${handleChange}>
               </defie-form-textfield>
             </div>
             <div class="form-item-wrapper">
@@ -262,8 +262,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
               .readonly=${readonly}
-              name="contact_address
-              .defaultValue=${values?.contact_addres}"
+              name="contact_address"
+              .defaultValue=${values?.contact_address}
               label="Address"
               .handler=${handleChange}>
               </defie-form-textfield>
@@ -307,8 +307,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
               .readonly=${readonly}
-              name="acct_mgr_mobile
-              .defaultValue=${values?.acct_mgr_mobil}"
+              name="acct_mgr_mobile"
+              .defaultValue=${values?.acct_mgr_mobile}
               label="Mobile"
               .handler=${handleChange}>
               </defie-form-textfield>
@@ -336,8 +336,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
               .readonly=${readonly}
-              name="acct_mgr_addres
-              .defaultValue=${values?.acct_mgr_addre}s"
+              name="acct_mgr_address"
+              .defaultValue=${values?.acct_mgr_address}
               label="Address"
               .handler=${handleChange}>
               </defie-form-textfield>
@@ -362,8 +362,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
                 .readonly=${readonly}
-                name="effective_dat
-                .defaultValue=${values?.effective_da}e"
+                name="effective_date"
+                .defaultValue=${values?.effective_date}
                 label="Effective date"
                 .handler=${handleChange}>
               </defie-form-textfield>
@@ -374,8 +374,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
               .readonly=${readonly}
-              name="customer_credit
-              .defaultValue=${values?.customer_credi}_limit"
+              name="customer_credit_limit"
+              .defaultValue=${values?.customer_credit_limit}
               label="Credit Limit (USD)" 
               .handler=${handleChange}>
               </defie-form-textfield>
@@ -383,8 +383,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
                 .readonly=${readonly}
-                name="reseller_perm
-                .defaultValue=${values?.reseller_per}it"
+                name="reseller_permit"
+                .defaultValue=${values?.reseller_permit}
                 label="Reseller Permit"
                 .handler=${handleChange}>
               </defie-form-textfield>
@@ -433,8 +433,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
               .readonly=${readonly}
-              name="credit_hold_rea
-              .defaultValue=${values?.credit_hold_re}son"
+              name="credit_hold_reason"
+              .defaultValue=${values?.credit_hold_reason}
               label="Credit Hold
               Reason" .handler=${handleChange}>
               </defie-form-textfield>
@@ -452,8 +452,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
                 .readonly=${readonly}
-                name="recurring_dat
-                .defaultValue=${values?.recurring_da}e"
+                name="recurring_date"
+                .defaultValue=${values?.recurring_date}
                 label="Recurring Date"
                 .handler=${handleChange}>
               </defie-form-textfield>
@@ -548,8 +548,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
               .readonly=${readonly}
-              name="open_sales_orde
-              .defaultValue=${values?.open_sales_ord}rs"
+              name="open_sales_orders"
+              .defaultValue=${values?.open_sales_orders}
               label="Open Sales Order(USD)" 
               .handler=${handleChange}>
               </defie-form-textfield>
@@ -577,8 +577,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
               .readonly=${readonly}
-              name="last_invoice_da
-              .defaultValue=${values?.last_invoice_d}te"
+              name="last_invoice_date"
+              .defaultValue=${values?.last_invoice_date}
               label="Last Invoice Date" 
               .handler=${handleChange}>
               </defie-form-textfield>
@@ -603,8 +603,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
                 .readonly=${readonly}
-                name="bank1_account
-                .defaultValue=${values?.bank1_accoun}_no"
+                name="bank1_account_no"
+                .defaultValue=${values?.bank1_accoun_no}
                 label="Account No"
                 .handler=${handleChange}>
               </defie-form-textfield>
@@ -615,8 +615,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
                 .readonly=${readonly}
-                name="bank1_route_n
-                .defaultValue=${values?.bank1_route_}o"
+                name="bank1_route_no"
+                .defaultValue=${values?.bank1_route_no}
                 label="Route No"
                 .handler=${handleChange}>
               </defie-form-textfield>
@@ -624,8 +624,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
               .readonly=${readonly}
-                name="bank1_swift_n
-                .defaultValue=${values?.bank1_swift_}o"
+                name="bank1_swift_no"
+                .defaultValue=${values?.bank1_swift_no}
                 label="Swift No"
                 .handler=${handleChange}>
               </defie-form-textfield>
@@ -646,8 +646,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
                 .readonly=${readonly}
-                name=" bank1_contac
-                .defaultValue=${values?.bank1_conta}t"
+                name="bank1_contact"
+                .defaultValue=${values?.bank1_contact}
                 label="Contact Name"
                 .handler=${handleChange}>
               </defie-form-textfield>
@@ -675,8 +675,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
             <div class="form-item-wrapper">
               <defie-form-textfield
               .readonly=${readonly}
-              name="bank1_contact_t
-              .defaultValue=${values?.bank1_contact_}itle"
+              name="bank1_contact_title"
+              .defaultValue=${values?.bank1_contact_title}
               label="Title"
               .handler=${handleChange}>
               </defie-form-textfield>
