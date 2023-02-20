@@ -12,7 +12,7 @@ export const template = ({ handleSave }: CreatePanelProps) => {
     <div class="create-panel-container">
       <div class="panel">
         <defie-form-header>
-          <defie-form-button .handler=${handleSave}>
+          <defie-form-button slot="action" .handler=${handleSave}>
             <span>Save</span>
           </defie-form-button>
         </defie-form-header>

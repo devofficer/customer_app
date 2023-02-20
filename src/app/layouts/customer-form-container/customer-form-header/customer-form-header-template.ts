@@ -8,8 +8,7 @@ export const template = () => {
           <span>47657 Lakeview Blvd., Fremont, CA 94538 USA</span>
         </div>
         <div class="panel-header-desc">
-          <span>CustomerID</span>
-          <span>#1230154684</span>
+          <slot name="desc"></slot>
         </div>
       </div>
       <div class="panel-header-item">
@@ -24,7 +23,7 @@ export const template = () => {
       </div>
       <div class="panel-header-item">
         <div></div>
-        <slot></slot>      
+        <slot name="action"></slot>      
       </div>
     </div>
   `;

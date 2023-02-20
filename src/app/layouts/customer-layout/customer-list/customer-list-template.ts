@@ -12,7 +12,7 @@ export const template = () => {
     <div class="create-panel-container">
       <div class="panel">
         <defie-form-header>
-          <defie-form-button .handler=${handleClick}>
+          <defie-form-button slot="action" .handler=${handleClick}>
             <span>New</span>
           </defie-form-button>
         </defie-form-header>

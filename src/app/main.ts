@@ -10,7 +10,7 @@ import { customElement, property } from 'lit/decorators.js';
 import './layouts/navbar/index.js';
 import './layouts/customer-form/index.js';
 import "./layouts/customer-layout/customer-create/index.js";
-import "./layouts/customer-layout/customer-view/index.js";
+import "./layouts/customer-layout/customer-list/index.js";
 import "./components/datatable/index.js";
 
 @customElement('defie-app')

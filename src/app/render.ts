@@ -1,6 +1,6 @@
 import { TemplateResult, html } from 'lit';
 import "./pages/create.js";
-import "./pages/view.js"
+import "./pages/list.js"
 
 const render = (pageContent: TemplateResult, lazyImport: TemplateResult) => {
   return html`
@@ -65,8 +65,8 @@ const render = (pageContent: TemplateResult, lazyImport: TemplateResult) => {
 
 // we need to define the interface for customers
 export const renderViewPage = (customers: any) => {
-  const pageContent = html`<defie-page-customer-view active="view" .customers=${customers}></defie-page-customer-view>`;
-  const lazyImport = html`<script type="module">import('./dist/app/pages/view.js')</script>`;
+  const pageContent = html`<defie-page-customer-list active="view" .customers=${customers}></defie-page-customer-list>`;
+  const lazyImport = html`<script type="module">import('./dist/app/pages/list.js')</script>`;
   return render(pageContent, lazyImport);
 }
 
