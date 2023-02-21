@@ -71,6 +71,7 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
                 name="bill_to_state" 
                 .readonly=${readonly} 
                 .defaultValue=${values.bill_to_state}
+                .categories=${categories?.state} 
                 .handler=${handleChange}>
               </defie-form-select>
             </div>
@@ -91,6 +92,7 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
                 label="Country *" 
                 .readonly=${readonly} 
                 .defaultValue=${values.bill_to_country}
+                .categories=${categories?.country} 
                 .handler=${handleChange}>
               </defie-form-select>
             </div>
@@ -166,6 +168,7 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
                 name="ship_to_state" 
                 .readonly=${readonly} 
                 .defaultValue=${values.ship_to_state}
+                .categories=${categories?.state} 
                 .handler=${handleChange}>
               </defie-form-select>
             </div>
@@ -185,6 +188,7 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
                 label="Country *" 
                 name="ship_to_country" 
                 .defaultValue=${values?.ship_to_country}
+                .categories=${categories?.country} 
                 .readonly=${readonly} 
                 .handler=${handleChange}>
               </defie-form-select>
@@ -205,6 +209,7 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
                 name="nexus" 
                 label="Nexus *" 
                 .defaultValue=${values?.nexus}
+                .categories=${categories?.nexus} 
                 .readonly=${readonly} 
                 .handler=${handleChange}>
               </defie-form-select>
@@ -263,6 +268,7 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
                 label="Title" 
                 name="contact_title" 
                 .defaultValue=${values?.contact_title}
+                .categories=${categories?.title} 
                 .readonly=${readonly} 
                 .handler=${handleChange}>
               </defie-form-select>
@@ -272,6 +278,7 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
                 label="Department" 
                 name="contact_department" 
                 .defaultValue=${values?.contact_department}
+                .categories=${categories?.department} 
                 .readonly=${readonly} 
                 .handler=${handleChange}>
               </defie-form-select>
@@ -339,6 +346,7 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
                 label="Title" 
                 name="acct_mgr_title" 
                 .defalutValue=${values?.acct_mgr_title}
+                .categories=${categories?.title} 
                 .readonly=${readonly} 
                 .handler=${handleChange}>
               </defie-form-select>
@@ -348,6 +356,7 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
                 label="Department" 
                 name="acct_mgr_department" 
                 .defaultValue=${values?.acct_mgr_department}
+                .categories=${categories?.department} 
                 .readonly=${readonly} 
                 .handler=${handleChange}>
               </defie-form-select>
@@ -375,7 +384,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
               <defie-form-select 
                 label="Term" 
                 name="customer_term" 
-                .categories=${categories.customerTermType} 
+                .defaultValue=${values?.customer_term}
+                .categories=${categories?.customerTermType} 
                 .readonly=${readonly} 
                 .handler=${handleChange}>
               </defie-form-select>
@@ -447,6 +457,7 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
                 name="tax_code" 
                 .readonly=${readonly}
                 .defaultValue=${values?.tax_code}
+                .categories=${categories?.tax_code} 
                 .handler=${handleChange}>
               </defie-form-select>
             </div>
@@ -550,8 +561,8 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
               <defie-form-select 
                 name="status" 
                 label="Status" 
-                .categories=${categories.statusType} 
-                .defaultValue=${values.status}
+                .categories=${categories?.statusType} 
+                .defaultValue=${values?.status}
                 .readonly=${readonly} 
                 .handler=${handleChange}>
               </defie-form-select>
@@ -797,7 +808,7 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
                 name="term" 
                 label="Term" 
                 .defaultValue=${values?.term}
-                .categories=${categories.customerTermType} 
+                .categories=${categories?.customerTermType} 
                 .readonly=${readonly} 
                 .handler=${handleChange}>
               </defie-form-select>

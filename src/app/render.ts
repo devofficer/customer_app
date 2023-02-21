@@ -84,8 +84,8 @@ export const renderViewPage = (customer: any) => {
   return render(pageContent, lazyImport);
 }
 
-export const renderEditPage = (customer: any) => {
-  const pageContent = html`<defie-page-customer-edit data-customer=${JSON.stringify(customer)} .customer=${customer}></defie-page-customer-edit>`;
+export const renderEditPage = (customer: any, categories: any) => {
+  const pageContent = html`<defie-page-customer-edit data-customer=${JSON.stringify(customer)} .customer=${customer} .categories=${categories}></defie-page-customer-edit>`;
   const lazyImport = html`<script type="module">import('./dist/app/pages/edit.js')</script>`;
   return render(pageContent, lazyImport);
 }

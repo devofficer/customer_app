@@ -36,6 +36,7 @@ export class App extends LitElement {
     alert("Current Customer is updated!");    
   }
 
+  
   render() {
     return html`
       <defie-navbar active="create" id="L. Duong"></defie-navbar>

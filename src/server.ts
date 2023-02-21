@@ -51,9 +51,10 @@ router.get('/edit', (req) => {
 
   const customer_id = req.request.query.id as string;
   const customer = getCustomer(customer_id);
+  const categories = getCategories();
 
   req.type = 'text/html';
-  req.body = Readable.from(render(renderEditPage(customer)));
+  req.body = Readable.from(render(renderEditPage(customer, categories)));
 });
 
 
@@ -90,6 +91,6 @@ app.use(staticFiles('.'));
 app.use(staticFiles('./dist'));
 app.use(staticFiles('./dist/app/public'));
 
-app.listen(3000, () => {
-  console.log('App is running on the port 3000');
+app.listen(3005, () => {
+  console.log('App is running on the port 3005');
 });
