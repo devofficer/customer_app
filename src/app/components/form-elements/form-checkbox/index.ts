@@ -19,6 +19,9 @@ export class CheckBox extends LitElement {
   @property()
   handler!: (name: string, value: boolean) => void;
 
+  @property()
+  checked: boolean = false;
+
   handleChange(event: Event) {
     const element = event.target as HTMLInputElement;
     this.handler(element.name, element.checked);
@@ -30,6 +33,7 @@ export class CheckBox extends LitElement {
       label: this.label,
       readonly: this.readonly,
       handler: this.handleChange,
+      checked: this.checked
     });
   }
 }

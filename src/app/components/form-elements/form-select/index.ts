@@ -22,6 +22,9 @@ export class SelectBox extends LitElement {
   @property()
   categories: any = {};
 
+  @property()
+  defaultValue: string = '';
+
   handleChange(event: Event) {
     const element = event.target as HTMLInputElement;
     this.handler(element.name, element.value);
@@ -33,7 +36,8 @@ export class SelectBox extends LitElement {
       label: this.label,
       readonly: this.readonly,
       handler: this.handleChange,
-      categories: this.categories
+      categories: this.categories,
+      defaultValue: this.defaultValue
     });
   }
 }
