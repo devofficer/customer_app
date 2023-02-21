@@ -11,6 +11,7 @@ export const styles = css`
   .navbar-profile-wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-content: center;
   }
 
