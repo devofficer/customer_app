@@ -10,11 +10,11 @@ interface CustomerFormViewProps {
   readonly: boolean
   categories: any
   values: CustomerFormProps; 
-  handler: (name: string, value: string) => void;
+  handler: (name: string, value: string | boolean) => void;
 }
 
 export const template = ({ readonly, categories, handler, values }: CustomerFormViewProps) => {
-  const handleChange = (name: string, value: string) => {
+  const handleChange = (name: string, value: string | boolean) => {
     handler(name, value);
   }
 

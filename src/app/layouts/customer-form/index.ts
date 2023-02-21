@@ -14,7 +14,7 @@ export class CustomerForm extends LitElement {
   @property() readonly: boolean = false; 
   @property() categories: any = {};
   @property() values!: CustomerFormProps;
-  @property() handleChange!: (name: string, value: string) => void;
+  @property() handleChange!: (name: string, value: string | boolean) => void;
   
   render() {
     return template({

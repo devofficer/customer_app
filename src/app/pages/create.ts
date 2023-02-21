@@ -102,7 +102,8 @@ export class App extends LitElement {
 
   protected handleSave = async () => {
     await createCustomer(this.information);
-    changeRoute('/customers');
+    alert("Customer is created");
+    // changeRoute('/customers');
   }
 
   render() {

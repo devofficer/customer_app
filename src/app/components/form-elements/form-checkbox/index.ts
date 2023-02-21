@@ -14,14 +14,14 @@ export class CheckBox extends LitElement {
   label: string = '';
 
   @property()
-  readonly: boolean = true;
+  readonly: boolean = false;
 
   @property()
-  handler!: (name: string, value: string) => void;
+  handler!: (name: string, value: boolean) => void;
 
   handleChange(event: Event) {
     const element = event.target as HTMLInputElement;
-    this.handler(element.name, element.value);
+    this.handler(element.name, element.checked);
   }
 
   render() {

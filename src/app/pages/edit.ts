@@ -26,18 +26,20 @@ export class App extends LitElement {
   } 
 
   protected handler = (name: string, value: string) => {
+    console.log(name, value);
     this.customer[name] = value;
+    console.log(this.customer[name]);
   }
 
   protected handleSave = async () => {
     await updateCustomer(this.customer);
-    changeRoute('/customers');
+    alert("Current Customer is updated!");    
   }
 
   render() {
     return html`
       <defie-navbar active="create" id="L. Duong"></defie-navbar>
-      <defie-customer-edit customer_id=${this.customer?.customer_id}>
+      <defie-customer-edit customer_id=${this.customer?.customer_id} .handleSave=${this.handleSave}>
         <defie-customer-form
           .values=${this.customer} 
           .handleChange=${this.handler}
