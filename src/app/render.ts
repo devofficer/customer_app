@@ -2,6 +2,7 @@ import { TemplateResult, html } from 'lit';
 import "./pages/create.js";
 import "./pages/list.js";
 import "./pages/view.js";
+import "./pages/edit.js";
 
 const render = (pageContent: TemplateResult, lazyImport: TemplateResult) => {
   return html`
@@ -80,5 +81,11 @@ export const renderCreatePage = (categories: any) => {
 export const renderViewPage = (customer: any) => {
   const pageContent = html`<defie-page-customer-view .customer=${customer}></defie-page-customer-view>`;
   const lazyImport = html`<script type="module">import('./dist/app/pages/view.js')</script>`;
+  return render(pageContent, lazyImport);
+}
+
+export const renderEditPage = (customer: any) => {
+  const pageContent = html`<defie-page-customer-edit data-customer=${JSON.stringify(customer)} .customer=${customer}></defie-page-customer-edit>`;
+  const lazyImport = html`<script type="module">import('./dist/app/pages/edit.js')</script>`;
   return render(pageContent, lazyImport);
 }

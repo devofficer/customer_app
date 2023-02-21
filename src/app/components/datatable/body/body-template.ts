@@ -14,9 +14,12 @@ export const template = ({ headers, items, renderers }: TableBodyProps) => {
       return html`
         <div class="body-wrapper">
         ${headers.map((header) => {
-          const dataIndex = header.dataIndex;
+          let dataIndex = header.dataIndex;
+          const renderIndex = header.dataIndex;
+          if(dataIndex === 'edit')
+            dataIndex = 'customer_id';
           const cellValue = item[dataIndex as keyof TableItemProps];
-          const renderer = renderers[dataIndex as keyof TableItemRenderer];
+          const renderer = renderers[renderIndex as keyof TableItemRenderer];
           if(header.width)
             return html`<span class="body-item" style="width: ${header.width}px">
               ${renderer ? renderer(cellValue) : cellValue}

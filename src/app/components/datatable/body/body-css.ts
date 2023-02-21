@@ -55,6 +55,11 @@ export const styles = css`
     margin-right: auto;
   }
 
+  .icon-button:hover {
+    scale: 1.2;
+    transition: 0.2s;
+  }
+
   .link-button {
     color: blue;
   }

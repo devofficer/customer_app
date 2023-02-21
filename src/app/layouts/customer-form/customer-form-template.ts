@@ -29,7 +29,7 @@ export const template = ({ readonly, categories, handler, values }: CustomerForm
               <defie-form-textfield
               .readonly=${readonly}
               name="customer"
-              .defaultValue=${values?.customer}
+              .defaultValue=${values.customer}
               label="Customer *"
               .handler=${handleChange}>
               </defie-form-textfield>

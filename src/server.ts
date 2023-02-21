@@ -6,8 +6,8 @@ import { nodeResolve } from 'koa-node-resolve';
 import staticFiles from 'koa-static';
 import { Readable } from 'stream';
 import { CustomerFormProps } from './app/layouts/customer-form/index.js';
-import { renderCreatePage, renderListPage, renderViewPage } from './app/render.js';
-import { addCustomer, generateMock, getCategories, getCustomer, getCustomers } from './mock/api.js';
+import { renderCreatePage, renderEditPage, renderListPage, renderViewPage } from './app/render.js';
+import { addCustomer, generateMock, getCategories, getCustomer, getCustomers, updateCustomer } from './mock/api.js';
 
 const app = new Koa();
 const router = new Router();
@@ -45,6 +45,18 @@ router.get('/view', (req) => {
   req.body = Readable.from(render(renderViewPage(customer)));
 });
 
+router.get('/edit', (req) => {
+  if(!req.request.query.id)
+    req.redirect('/customers?page=1');
+
+  const customer_id = req.request.query.id as string;
+  const customer = getCustomer(customer_id);
+
+  req.type = 'text/html';
+  req.body = Readable.from(render(renderEditPage(customer)));
+});
+
+
 router.get('/create', (ctx) => {
   const categories = getCategories();
   ctx.type = 'text/html';
@@ -57,7 +69,15 @@ router.post('/create/customer', (ctx) => {
   
   ctx.type = 'text/html';
   ctx.body = {success: true};
-})
+});
+
+router.post('/update/customer', (ctx) => {
+  const customer = ctx.request.body as CustomerFormProps;
+  updateCustomer(customer);
+  
+  ctx.type = 'text/html';
+  ctx.body = {success: true};
+});
 
 app.use(bodyParser());
 app.use(router.routes());

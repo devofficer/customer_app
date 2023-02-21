@@ -20,7 +20,7 @@ const headers: TableHeaderProps[] = [
 export const template = (customers: any) => {
   const renderers: TableItemRenderer = {
     edit: (cellValue: string) => {
-      return html`<img class="icon-button" src="./assets/buttons/edit.png" alt="${cellValue}"/>`
+      return html`<a class="icon-button" href="/edit?id=${cellValue}"><img class="icon-button" src="./assets/buttons/edit.png" alt="${cellValue}"/></a>`
     },
     customer_id: (cellValue: string) => {
       return html`<a class="link-button" href="/view?id=${cellValue}">${cellValue.substring(0, 16)}...</a>`

@@ -62,6 +62,13 @@ export const addCustomer = (customer: any) => {
   console.log(mock_customers[0]);
 }
 
+export const updateCustomer = (information: any) => {
+  const customer_id = information.customer_id;
+  const index = mock_customers.findIndex((customer) => customer.customer_id === customer_id);
+  if(index != -1)
+    mock_customers[index] = {...information};
+}
+
 export const getCustomer = (customer_id: string) => {
   const customer = mock_customers.find((customer) => customer.customer_id === customer_id);
   return customer;

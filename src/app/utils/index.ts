@@ -16,6 +16,12 @@ export const generateQueryUrl = (params: any) => {
   location.href = url.toString();
 }
 
+export const getQuery = (key: string) => {
+  const url = new URL(location.href);
+  const query = url.searchParams.get(key);
+  return query; 
+}
+
 export const changeRoute = (url: string) => {
   location.href = url;
 }
